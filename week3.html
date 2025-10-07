@@ -1,0 +1,156 @@
+<head>
+<link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">    <title>
+        vue js pet depot
+    </title>
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js">
+    </script>
+
+</head>
+<body>
+    <div id="app">
+        <header>
+            <button v-on:click="showCheckout">
+                {{cartItemCount}} 
+            <i class="fa-solid fa-cart-shopping"></i>       
+                     Check out
+            </button>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <div v-if="showproduct">
+                <figure>
+                    <img v-bind:src="Product.image" v-bind:alt="Product.title">
+                </figure>
+                <h2 v-text="Product.title"></h2>
+                <p v-text="Product.description"></p>
+                <p>price</p><h2 v-text="Product.price"></h2>
+                <button v-on:click="addToCart" v-if="canAddToCart">
+                    Add to cart
+                </button>
+                <button disabled v-else>
+                    add to cart
+                </button>
+            </div>
+            <div v-else>
+            <h2>Checkout</h2>
+            <p>
+                <strong>First name:</strong>
+                <input v-model.trim="order.firstname"/>
+            </p>
+            <p>
+                <strong>Last name:</strong>
+                <input v-model.trim="order.lastname"/>
+            </p>
+            <p>
+                <strong> Address:</strong>
+                <input v-model="order.address"/>
+            </p>
+            <p>
+                <strong>City:</strong>
+                <input v-model="order.city"/>
+            </p>
+            <p>
+                <strong>State:</strong>
+                <select v-model="order.state">
+                    <option disabled value="">State</option>
+                    <option v-for="(state, key) in states" v-bind:value="state">{{ key }}</option>
+                    <!-- <option v-bind:value="states.AL">AL</option>
+                    <option v-bind:value="states.AR">AR</option>
+                    <option v-bind:value="states.CA">CA</option>
+                    <option v-bind:value="states.NV">NV</option> -->
+                </select>
+            </p>
+            <P>
+                <strong>Zip Code:</strong>
+                <input v-model.number="order.zip" type="number"/>
+            </P>
+            <p>
+                <input type="checkbox" name="" id="gift" value="true" v-model="order.gift" v-bind:true-value="order.sendGift" v-bind:false-value="order.dontsendGifts" />
+                <label for="gift">ship as a gift?</label>
+            </p>
+
+            <p>
+                <input type="radio" name="" id="home" value="home" v-model="order.method"/>
+                <label for="home">Home</label>
+                <input type="radio" name="" id="business" value="business" v-model="order.method"/>
+                <label for="business">Business</label>
+            </p>
+            <h2>order information</h2>
+            <p>First name: {{order.firstname}}</p>
+            <p>Last name: {{order.lastname}}</p>
+            <p>Address: {{order.address}}</p>
+            <p>City: {{order.city}}</p>
+            <p>State: {{order.state}}</p>
+            <p>Zip Code: {{order.zip}}</p>
+            <p>Gift: {{order.gift}}</p>
+            <p>Method: {{order.method}}</p>
+            <button v-on:click="submitForm">Place Order</button>
+            
+            </main>
+            </section>
+        </main>
+
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                sitename:"Vue.js Pet Depot",  
+                Product: {
+                    id: 1000,
+                    title: "Cat Food, 28lb Bag",
+                    description: "the best and healthy cat food for your cat",
+                    price: 5000,
+                    image: 'img/CAT FOOD2.png',
+                    availableInventory: 7
+
+                },
+                order: {
+                    firstname: '',
+                    lastname: '',
+                    address: '',
+                    city: '',
+                    zip: '',
+                    state: '',
+                    method: 'home',
+                    gift: 'do not send as Gifts',
+                    sendGift: 'Send as gift',
+                    dontsendGifts: 'Do not send as gift',
+
+                    
+                },
+                states: {
+                        AL: 'Alabama',
+                        AR: 'Arizona',
+                        CA: 'California',
+                        NV: 'Nevada'
+                    },
+                cart: [],
+                showproduct: true,
+                
+
+            },
+            methods: {
+                addToCart: function() {
+                    this.cart.push(this.Product.id);
+                },
+                showCheckout(){
+                    this.showproduct = !this.showproduct ? true : false;
+                },
+                submitForm(){
+                    alert("order submitted");
+                }
+
+            },
+            computed: {
+                cartItemCount: function() {
+                    return this.cart.length;
+                },
+                canAddToCart: function() {
+                    return this.Product.availableInventory > this.cartItemCount;
+                }
+            }
+        });
+    </script>
+
+</body>
