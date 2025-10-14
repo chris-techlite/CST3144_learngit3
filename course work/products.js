@@ -142,7 +142,18 @@ let products = [
                     "location": "B15-1-21",
                     "rating": 3
 
-                }]
-                
+                },
+                {
+                    "id": 15000,
+                    "title": "gardening",
+                    "description": "learn to grow your own food",
+                    "price": 5000,
+                    "image": 'img/garden.jpg',
+                    "availableInventory": 5,
+                    "location": "B15-1-22",
+                    "rating": 5
 
-            
+                }
+
+            ]
+
