@@ -2,7 +2,7 @@
 <head>
     <title>vue js pet depot
     </title>
-<link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
 
     <!-- <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"> -->
@@ -12,11 +12,15 @@
 <body>
     <div id="app">
         <header>
-            <button v-on:click="showCheckout">
-                {{cartItemCount}} 
-            <i class="fa-solid fa-cart-shopping"></i>      
-                     Check out
+            
+            <button v-on:click="showCheckout" v-if="cartItemCount > 0">
+                {{cartItemCount}}    
+            <i class="fa-solid fa-cart-shopping"></i>
+            Check out
+                     
             </button>
+            <button disabled v-else><i class="fa-solid fa-cart-shopping"></i>
+            Check out</button>
             <h1 v-text="sitename"></h1>
         </header>
         <main>
@@ -35,7 +39,7 @@
                 <h2 v-text="Product.title"></h2>
                 <p v-text="Product.description"></p>
                 <p>price: {{Product.price}}</p>
-                <p>available inventory: {{Product.availableInventory - cartCount(Product.id)}}</p>
+                <p>Spaces: {{Product.availableInventory - cartCount(Product.id)}}</p>
                 <p>location: {{Product.location}}</p>
                 <button v-on:click="addToCart(Product)" v-if="canAddToCart(Product)">Add to cart</button>
                 </button>

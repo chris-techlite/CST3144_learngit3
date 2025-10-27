@@ -3,7 +3,7 @@ let products = [
                 {
                     "id": 2000,
                     "title": "KARATE",
-                    "description": "self defense class for all ages",
+                    "description": "Self defense class for all ages",
                     "price": 5000,
                     "image": 'img/karate.jpg',
                     "availableInventory": 5,
@@ -14,7 +14,7 @@ let products = [
                 {
                     "id": 3000,
                     "title": "MUSIC",
-                    "description": "learn to play an instrument of your choice",
+                    "description": "Learn to play an instrument of your choice",
                     "price": 5000,
                     "image": 'img/music.jpg',
                     "availableInventory": 5,
@@ -25,7 +25,7 @@ let products = [
                  {
                     "id": 4000,
                     "title": "BASKETBALL",
-                    "description": "learn to play basketball like a pro",
+                    "description": "Learn to play basketball like a pro",
                     "price": 5000,
                     "image": 'img/basketball.png',
                     "availableInventory": 5,
@@ -36,7 +36,7 @@ let products = [
                  {
                     "id": 5000,
                     "title": "ART AND CRAFT",
-                    "description": "express yourself with colors and creativity",
+                    "description": "Express yourself with colors and creativity",
                     "price": 5000,
                     "image": 'img/artandcraft.jpg',
                     "availableInventory": 5,
@@ -47,7 +47,7 @@ let products = [
                  {
                     "id": 6000,
                     "title": "ROBOTICS",
-                    "description": "learn to build and program robots",
+                    "description": "Learn to build and program robots",
                     "price": 5000,
                     "image": 'img/robotics.png',
                     "availableInventory": 5,
@@ -58,7 +58,7 @@ let products = [
                  {
                     "id": 7000,
                     "title": "POETRY",
-                    "description": "unleash the power of words",
+                    "description": "Unleash the power of words",
                     "price": 5000,
                     "image": 'img/poetry.jpeg',
                     "availableInventory": 5,
@@ -69,7 +69,7 @@ let products = [
                  {
                     "id": 8000,
                     "title": "CHESS",
-                    "description": "learn the game of kings",
+                    "description": "Learn the game of kings",
                     "price": 5000,
                     "image": 'img/chess.png',
                     "availableInventory": 5,
@@ -80,7 +80,7 @@ let products = [
                  {
                     "id": 9000,
                     "title": "CULINARY",
-                    "description": "express your creativity with food",
+                    "description": "Express your creativity with food",
                     "price": 5000,
                     "image": 'img/CULINARY.jpeg',
                     "availableInventory": 5,
@@ -91,7 +91,7 @@ let products = [
                  {
                     "id": 10000,
                     "title": "FASHION",
-                    "description": "learn to design and sew your own clothes",
+                    "description": "Learn to design and sew your own clothes",
                     "price": 5000,
                     "image": 'img/fashion.png',
                     "availableInventory": 5,
@@ -102,7 +102,7 @@ let products = [
                  {
                     "id": 11000,
                     "title": "PHOTOGRAPHY",
-                    "description": "capture the world through your lens",
+                    "description": "Capture the world through your lens",
                     "price": 5000,
                     "image": 'img/photography.png',
                     "availableInventory": 5,
@@ -114,7 +114,7 @@ let products = [
                  {
                     "id": 12000,
                     "title": "VOLLEYBALL",
-                    "description": "learn to play volleyball like a pro",
+                    "description": "Learn to play volleyball like a pro",
                     "price": 5000,
                     "image": 'img/volleyball.jpeg',
                     "availableInventory": 5,
@@ -125,7 +125,7 @@ let products = [
                {
                     "id": 13000,
                     "title": "FOOTBALL",
-                    "description": "learn to play football like a pro",
+                    "description": "Learn to play football like a pro",
                     "price": 5000,
                     "image": 'img/football.jpeg',
                     "availableInventory": 5,
@@ -135,7 +135,7 @@ let products = [
                {
                     "id": 14000,
                     "title": "GAMING",
-                    "description": "do what you love",
+                    "description": "Do what you love",
                     "price": 5000,
                     "image": 'img/gaming.png',
                     "availableInventory": 5,
@@ -145,8 +145,8 @@ let products = [
                 },
                 {
                     "id": 15000,
-                    "title": "gardening",
-                    "description": "learn to grow your own food",
+                    "title": "GARDENING",
+                    "description": "Learn to grow your own food",
                     "price": 5000,
                     "image": 'img/garden.jpg',
                     "availableInventory": 5,
