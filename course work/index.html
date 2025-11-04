@@ -1,7 +1,6 @@
 <html>
 <head>
-    <title>vue js pet depot
-    </title>
+    <title>After school lessons</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
 
@@ -62,7 +61,16 @@
                 </div>
             </div>
             <div v-else>
+
             <h2>Checkout</h2>
+            <div v-else>
+        <h1>checkout page</h1>
+              
+            </div>
+            <div>
+
+            </div>
+    
             <p>
                 <strong>First name:</strong>
                 <input v-model.trim="order.firstname"/>
@@ -114,8 +122,8 @@
             <p>Zip Code: {{order.zip}}</p>
             <p>Gift: {{order.gift}}</p>
             <p>Method: {{order.method}}</p>
-            <button v-on:click="submitForm">Place Order</button>
-            
+            <button disabled v-on:click="submitForm">Place Order</button>
+
             </main>
             </section>
         </main>
@@ -125,7 +133,7 @@
         new Vue({
             el: '#app',
             data: {
-                sitename:"Vue.js Pet Depot",  
+                sitename:"Aftrer School Lessons",  
                 products: products,
                 order: {
                     firstname: '',
@@ -156,6 +164,13 @@
                 addToCart: function(product) {
                     this.cart.push(product.id);
                 },
+                removeFromCart: function(product) {
+                    const index = this.cart.indexOf(product.id);
+                    if (index > -1) {
+                        this.cart.splice(index, 1);
+                    }
+                },
+                 
                 showCheckout(){
                     this.showproduct = !this.showproduct ? true : false;
                 },

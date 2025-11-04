@@ -1,0 +1,7 @@
+{
+  "name": "hello-world",
+  "author": "Christian CO",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
