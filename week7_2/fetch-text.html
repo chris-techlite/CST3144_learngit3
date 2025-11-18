@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script>
+            fetch('http://localhost:3000').then(
+                function(response) {
+                    response.text().then(
+                        function(text) {
+                            alert(text);
+                        }
+                    );
+                }
+            )
+        </script>
+    </head>
+</html>

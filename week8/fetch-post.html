@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch POST Example</title>
+</head>
+
+<body>
+    
+    <p>Add a new product to the <code>Products</code> collection</p>
+    <code>{title: "New Product", price: 9.99}</code>
+    <p>the response: <span id="response"></span></p>
+    <p>error: <span id="error"></span></p>
+    <script>
+        const newProduct = {title: "New Product", price: 9.99};
+        fetch('http://localhost:3000/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+        .then(response => response.json())
+        .then(responseJSON => {
+            document.getElementById('response').innerText = JSON.stringify(responseJSON);
+        })
+        .catch(error => {
+            document.getElementById('error').innerText = error.message;
+        });
+    </script>
+</body>

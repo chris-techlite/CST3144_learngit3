@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="store">{{product}}</div>
+    <script>
+        let store = new Vue({
+            el: '#store',
+            data: {
+                product: []
+            },
+            created: function(){
+                console.log("requesting data from server...");
+                fetch('http://localhost:3000').then(
+                    function(response) {
+                        response.json().then(
+                            function(json) {
+                                store.product = json;
+                                console.log(json);
+                            }
+                        );
+                    }
+                );
+            }
+
+                            
+        });
+    </script>
+
+    
+
+</body>
+</html>
