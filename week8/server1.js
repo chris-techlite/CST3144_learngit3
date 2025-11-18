@@ -64,6 +64,7 @@ app.delete('/collection/:collectionName/:id', (req, res, next) => {
     }
   )
 })
-app.listen(3000, () => {
-  console.log(`Expressjs server running at localhost:3000`)
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Expressjs server running at localhost:${port}`)
 })
